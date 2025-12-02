@@ -15,7 +15,7 @@ library(sandwich)
 library(patchwork)
 
 # Importa os dados para modelagem
-sojaBR <- read_xlsx(""C:\Aulas_praticas\dados_soja_Painel.xlsx"", sheet = "FOR_R_alt", range="B2:AB266")
+sojaBR <- read_xlsx(""C:/Aulas_praticas/dados_soja_Painel.xlsx"", sheet = "FOR_R_alt", range="B2:AB266")
 
 # Transforma base de dados para dados em painel
 sojaBR_painel <- pdata.frame(sojaBR, index = c("Estado", "Season"), drop.index = FALSE)
@@ -214,5 +214,6 @@ plot_MEA <-ggplot(resultadosMEA, aes(x = Real, y = Predito)) +
 
 combined_plot <- plot_OLS + plot_MEF + plot_MEF_dum1 + plot_MEA + plot_layout(ncol = 4)
 print(combined_plot)
+
 
 
